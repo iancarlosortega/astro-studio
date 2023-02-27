@@ -7,6 +7,7 @@ body {
   overflow-wrap: break-word;
   font-size: 15px;
   font-weight: 500;
+  line-height: 25px;
   color: #1b1d23;
 }
 
@@ -15,7 +16,7 @@ body {
 }
 
 .btn {
-  @apply py-7 px-10 font-bold text-[white] bg-dark-blue hover:bg-gray flex gap-4 items-center justify-center transition duration-500 
+  @apply py-7 px-10 font-bold text-[white] bg-dark-blue hover:bg-gray flex gap-4 items-center justify-center transition duration-500 w-fit 
 }
 
 /* Custom Pagination */

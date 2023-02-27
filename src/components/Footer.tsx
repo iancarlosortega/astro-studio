@@ -1,6 +1,13 @@
+import { useEffect, useState } from 'react';
 import { ArrowIcon, LogoIcon } from '../icons';
 
 export const Footer = () => {
+	const [currentUrl, setCurrentUrl] = useState('/');
+
+	useEffect(() => {
+		setCurrentUrl(location.pathname);
+	}, []);
+
 	return (
 		<footer
 			className='bg-very-light-gray flex flex-col items-center mt-[8rem]
@@ -12,13 +19,25 @@ export const Footer = () => {
 			</a>
 			<ul className='flex flex-col gap-8 md:flex-row'>
 				<li className='link'>
-					<a href='portfolio'>Portfolio</a>
+					<a
+						className={currentUrl === '/portfolio' ? 'text-dark-blue' : ''}
+						href='portfolio'>
+						Portfolio
+					</a>
 				</li>
 				<li className='link'>
-					<a href='about'>About Us</a>
+					<a
+						className={currentUrl === '/about' ? 'text-dark-blue' : ''}
+						href='about'>
+						About Us
+					</a>
 				</li>
 				<li className='link'>
-					<a href='contact'>Contact</a>
+					<a
+						className={currentUrl === '/contact' ? 'text-dark-blue' : ''}
+						href='contact'>
+						Contact
+					</a>
 				</li>
 			</ul>
 			<a

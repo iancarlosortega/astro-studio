@@ -12,10 +12,52 @@ module.exports = {
 			'very-light-gray': '#f0f0f5',
 		},
 		fontSize: {
-			base: [
-				'15px',
+			xl: [
+				'40px',
 				{
-					fontWeight: 500,
+					fontWeight: 700,
+					lineHeight: '48px',
+					letterSpacing: '-1.4px',
+				},
+			],
+			'2xl': [
+				'48px',
+				{
+					fontWeight: 700,
+					lineHeight: '48px',
+					letterSpacing: '-1.2px',
+				},
+			],
+			'3xl': [
+				'56px',
+				{
+					fontWeight: 700,
+					lineHeight: '56px',
+					letterSpacing: '-1.4px',
+				},
+			],
+			'4xl': [
+				'80px',
+				{
+					fontWeight: 700,
+					lineHeight: '80px',
+					letterSpacing: '-2px',
+				},
+			],
+			'5xl': [
+				'120px',
+				{
+					fontWeight: 700,
+					lineHeight: '200px',
+					letterSpacing: '-3px',
+				},
+			],
+			'6xl': [
+				'200px',
+				{
+					fontWeight: 700,
+					lineHeight: '200px',
+					letterSpacing: '-5px',
 				},
 			],
 		},
