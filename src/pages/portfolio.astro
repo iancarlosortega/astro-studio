@@ -1,6 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { HangDown, PortfolioCard } from "../components";
+import { projects } from "../utils/constants";
 ---
 <BaseLayout title="Portfolio">
-	<h1>Portfolio</h1>
+	<HangDown pageName='Portfolio' />
+			<main class='grid gap-8 lg:grid-cols-3 p-8 md:p-0'>
+				{projects.map(project => (
+					<PortfolioCard {...project} effect='fade-up' />
+				))}
+			</main>
 </BaseLayout>

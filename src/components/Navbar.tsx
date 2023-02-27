@@ -35,14 +35,26 @@ export const Navbar = () => {
 				bg-very-light-gray text-dark-blue font-bold p-12
 				absolute w-[90%] top-[103px] flex-col gap-7
 				text-lg md:hidden z-10`}>
-				<li onClick={toggleMenu} className='cursor-pointer'>
-					<a href='portfolio'>Portfolio</a>
+				<li onClick={toggleMenu} className='link'>
+					<a
+						className={currentUrl === '/portfolio' ? 'text-dark-blue' : ''}
+						href='portfolio'>
+						Portfolio
+					</a>
 				</li>
-				<li onClick={toggleMenu} className='cursor-pointer'>
-					<a href='about'>About Us</a>
+				<li onClick={toggleMenu} className='link'>
+					<a
+						className={currentUrl === '/about' ? 'text-dark-blue' : ''}
+						href='about'>
+						About Us
+					</a>
 				</li>
-				<li onClick={toggleMenu} className='cursor-pointer'>
-					<a href='contact'>Contact</a>
+				<li onClick={toggleMenu} className='link'>
+					<a
+						className={currentUrl === '/contact' ? 'text-dark-blue' : ''}
+						href='contact'>
+						Contact
+					</a>
 				</li>
 			</ul>
 			<ul data-aos='fade-right' className='hidden md:flex gap-12'>

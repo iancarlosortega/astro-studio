@@ -1,6 +1,71 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { HangDown, LeaderCard, PageInformation } from '../components';
+import heritageImage from '../assets/about/desktop/image-heritage.jpg';
+import heroDesktopImage from '../assets/about/desktop/image-hero.jpg';
+import heroTabletImage from '../assets/about/tablet/image-hero.jpg';
+import heroMobileImage from '../assets/about/mobile/image-hero.jpg';
 ---
-<BaseLayout title="About Us">
-	<h1>About Us</h1>
+
+<BaseLayout title='About Us'>
+	<HangDown pageName='About Us' />
+	<PageInformation
+		title='about'
+		subtitle='Your team of professionals'
+		body='Our small team of world-class professionals will work with you every step of the way. Strong relationships are at the core of everything we do. This extends to the relationship our projects have with their surroundings.'
+		desktopImage={heroDesktopImage}
+		tabletImage={heroTabletImage}
+		mobileImage={heroMobileImage}
+	/>
+
+	<div class='hidden md:block w-16 h-px bg-light-gray mt-[12rem]'></div>
+	<section class='px-4 py-10 md:px-0 grid lg:grid-cols-[40%_55%] gap-5 lg:py-0'>
+		<div data-aos='fade-right'>
+			<h2 class='text-xl my-[3rem] md:text-3xl'>Our <br> Heritage</h2>
+			<p class='my-5'>
+				We have a unique network and skillset to help bring your projects to life. Our small team of highly skilled individuals combined with our large network put us in a strong position to deliver exceptional results.
+			</p>
+			<p class='my-5'>
+				Over the past 10 years, we have worked on all kinds of projects. From stations to high-rise buildings, we create spaces that inspire and delight.
+			</p>
+			<p class='my-5'>
+				We work closely with our clients so that we understand the intricacies of each project. This allows us to work in harmony the surrounding area to create truly stunning projects that will stand the test of time
+			</p>
+		</div>
+		<div data-aos='fade-left' class='justify-end hidden lg:flex'>
+			<img class='w-[90%]' src={heritageImage} alt='Heritage' />
+		</div>
+	</section>
+
+	<section class='px-4 py-10 md:px-0 lg:grid grid-cols-[33%_66%] md:my-[8rem]'>
+		<h2 data-aos='fade-left' class='text-xl mb-[3rem] md:text-3xl'>
+			The <br /> Leaders
+		</h2>
+		<div class='grid gap-10 md:grid-cols-2'>
+			<LeaderCard
+				client:load
+				leaderName='Jake Richards'
+				leaderJob='Chief Architect'
+				image='jake'
+			/>
+			<LeaderCard
+				client:load
+				leaderName='Thompson Smith'
+				leaderJob='Head of Finance'
+				image='thompson'
+			/>
+			<LeaderCard
+				client:load
+				leaderName='Jackson Rourke'
+				leaderJob='Lead Designer'
+				image='jackson'
+			/>
+			<LeaderCard
+				client:load
+				leaderName='Maria Simpson'
+				leaderJob='Senior Architect'
+				image='maria'
+			/>
+		</div>
+	</section>
 </BaseLayout>

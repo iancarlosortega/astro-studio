@@ -1,6 +1,61 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ContactForm, HangDown, MapView, PageInformation } from '../components';
+import { ArrowIcon } from '../icons';
+import heroDesktopImage from '../assets/contact/desktop/image-hero.jpg';
+import heroTabletImage from '../assets/contact/tablet/image-hero.jpg';
+import heroMobileImage from '../assets/contact/mobile/image-hero.jpg';
 ---
-<BaseLayout title="Contact">
-	<h1>Contact</h1>
+<BaseLayout title='Contact'>
+	<HangDown pageName='Contact' />
+	<PageInformation
+		title='contact'
+		subtitle='Tell us about your project'
+		body='We’d love to hear more about your project. Please, leave a message below or give us a call. We have two offices, one in Texas and one in Tennessee. If you find yourself nearby, come say hello!'
+		opacity='40'
+		isCustomBlack={false}
+		desktopImage={heroDesktopImage}
+		tabletImage={heroTabletImage}
+		mobileImage={heroMobileImage}
+	/>
+	<div class='hidden md:block w-16 h-px bg-light-gray mt-[12rem]'></div>
+	<section data-aos='zoom-out' class='px-4 py-10 md:px-0'>
+		<div
+			class='flex flex-col gap-8 lg:flex-row lg:justify-center lg:gap-[6rem] lg:mt-[5rem]'>
+			<h2 class='text-xl mt-[3rem] mb-4 md:text-3xl md:mt-[3rem] lg:mt-0'>
+				Contact
+				<br />
+				Details
+			</h2>
+			<div class='md:flex justify-between lg:flex-col lg:justify-center'>
+				<div class='grid gap-6'>
+					<h5 class='font-bold'>Main Office</h5>
+					<p class='text-dark-gray'> Mail: archone@mail.com</p>
+					<p class='text-dark-gray'> Address: 1892 Chenoweth Drive TN</p>
+					<p class='text-dark-gray'> Phone: 123-456-3451</p>
+				</div>
+				<button class='flex gap-4 items-center my-6'>
+					<p> View on Map</p>
+					<ArrowIcon color='#1B1D23' />
+				</button>
+			</div>
+
+			<div
+				class='md:flex justify-between mt-6 md:mt-20 lg:mt-0 lg:flex-col lg:justify-center'>
+				<div class='grid gap-6'>
+					<h5 class='font-bold'>Office II</h5>
+					<p class='text-dark-gray'> Mail: archtwo@mail.com</p>
+					<p class='text-dark-gray'> Address: 3399 Wines Lane Tx</p>
+					<p class='text-dark-gray'> Phone: 832-123-3451</p>
+				</div>
+				<button class='flex gap-4 items-center my-6'>
+					<p> View on Map</p>
+					<ArrowIcon color='#1B1D23' />
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<MapView client:load />
+	<ContactForm client:load />
 </BaseLayout>
