@@ -1,10 +1,11 @@
 import { useRef, useLayoutEffect } from 'react';
-import mapboxgl, { Map, Marker, Popup, NavigationControl } from 'mapbox-gl';
+import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 mapboxgl.accessToken =
 	'pk.eyJ1IjoiaWFuY2FybG9zb3J0ZWdhIiwiYSI6ImNrcThncW1rYjAwZ3gybnBrc2EyeGphNWoifQ.jDCs1Sv56p2qalAYsOlLTA';
 
 export const MapView = () => {
+	const { Map, Marker, Popup, NavigationControl } = mapboxgl;
 	const mapContainer = useRef<HTMLDivElement>(null);
 
 	useLayoutEffect(() => {
