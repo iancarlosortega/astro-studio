@@ -1,8 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-mapboxgl.accessToken =
-	'pk.eyJ1IjoiaWFuY2FybG9zb3J0ZWdhIiwiYSI6ImNrcThncW1rYjAwZ3gybnBrc2EyeGphNWoifQ.jDCs1Sv56p2qalAYsOlLTA';
+mapboxgl.accessToken = import.meta.env.PUBLIC_MAPBOX_API_KEY;
 
 export const MapView = () => {
 	const { Map, Marker, Popup, NavigationControl } = mapboxgl;
